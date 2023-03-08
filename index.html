@@ -1,0 +1,327 @@
+<!-- Bootstrap Grid Project by Traven Gonzales -->
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Grid Project</title>
+
+  <!-- Google Fonts Links (M Plus 1p) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <!-- Separate Style Sheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon Link -->
+  <link rel="icon" type="image/x-icon" href="./assets/post-bird-favicon.png">
+</head>
+
+<body>
+  <!-- Parent Bootstrap Container for all content on page -->
+  <div class="container-fluid min-vh-100 d-flex p-0 m-0">
+    <!-- Base Row Container for Columns of Content -->
+    <div class="row w-100 m-0 p-0 d-flex flex-column flex-lg-row ">
+      <!-- Nav Bar Implementation. Done as offcanvas that displays on lg+ breakpoints -->
+      <nav class="navbar navbar-expand-lg col-lg-3 flex-shrink-1 flex-column align-items-stretch flex-shrink-1">
+        <!-- The Navbar Header, Featuring the Logo as well as a menu toggler for md- breakpoints -->
+        <div class="row justify-content-around align-items-center px-1">
+          <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-bar"
+            ariacontrols="nav-bar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand " href="#">
+            <img class="logo" src="./assets/post-bird-logo.png"
+              alt="The logo for the Post Bird, featuring a seagull with a mailman cap">
+          </a>
+          <!-- Used to center the logo in flex on breakpoints where the navbar is a header -->
+          <div class="spacer d-lg-none"></div>
+        </div>
+
+        <!-- The Navbar Body -->
+        <!-- The offcanvas component of the navbar which displays the folders of the app -->
+        <!-- The links are nonfunctional -->
+        <div class="row d-flex flex-column align-items-start m-0">
+          <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="nav-bar" aria-labelledby="nav-bar-label"
+            data-bs-backdrop="static">
+            <!-- Nav Header -->
+            <!-- Repeated such that the offcanvas navbar may have a proper title as well as
+              have a well branded header -->
+            <div class="offcanvas-header align-items-start">
+              <h5 class="offcanvas-title" id="nav-bar-label">
+                <img class="logo" src="./assets/post-bird-logo.png"
+                  alt="The logo for the Post Bird, featuring a seagull with a mailman cap">
+              </h5>
+              <!-- Close button only appears on the xs, sm, and md breakpoints -->
+              <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#nav-bar"
+                aria-label="Close"></button>
+            </div>
+
+            <!-- Nav Body Proper -->
+            <div class="offcanvas-body flex-column">
+              <!-- Compose Button Section. (Button is nonfunctional for this project's front end focus) -->
+              <hr>
+              <button class="btn btn-primary compose-btn" type="button">
+                + Compose
+              </button>
+              <hr>
+
+              <!-- Nav Pills (The parts of the nav meant to navigate the page to new folders. Nonfunctional for this project) -->
+              <ul class="navbar-nav flex-column">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <p class="nav-pill">Inbox</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <p class="nav-pill">Tagged</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <p class="nav-pill">Important</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <p class="nav-pill">Drafts</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <p class="nav-pill">Sent</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <p class="nav-pill">Trash</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Inbox Column and Message Panel Column Parent Container -->
+      <!-- Used to apply flex grow on the inbox and message panel columns on tablet/mobile breakpoints such that they can fill the negative space in the y direction -->
+      <div class="col-sm-12 col-lg-9 d-flex flex-grow-1 p-0 m-0">
+        <div class="row w-100 d-flex p-0 m-0">
+          <!-- Inbox Bar Column -->
+          <div class="inbox-bar d-flex flex-column col-sm-12 col-md-4 flex-grow-1 pe-3">
+
+            <!-- The header of the inbox bar, displaying the title of the bar as well as a search bar -->
+            <div class="inbox-header row w-100 ms-1 mb-2 me-2">
+              <div class="col w-100 d-flex flex-column align-content-start ps-0">
+                <div class="row mx-1">
+                  <div class=" fs-2">Inbox</div>
+                </div>
+                <div class="row mx-1">
+                  <form class="d-flex " role="search">
+                    <input class="search-bar form-control" type="search" placeholder="Search" aria-label="inboxSearch">
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- The Inbox Proper, where a user's messages are stored and displayed -->
+            <div class="inbox row w-100 mx-1 flex-grow-1 ms-1 me-2">
+              <ul class="list-group list-group-flush col flex-column pe-0">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between align-items-center">
+                    <h4 class="inbox-message-title mb-0">About Last Night</h4>
+                    <button type="button" class="btn btn-secondary open-message-btn d-md-none" data-bs-toggle="modal"
+                      data-bs-target="#message-modal">
+                      +Open
+                    </button>
+                  </div>
+                  <small class="inbox-message-date">2/2/2023</small>
+                  <p class="inbox-message-prev mt-1">
+                    Hi Maxine, I know we said some things that kind of got out of hand. I
+                    got caught up in the heat of the moment and...
+                  </p>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between align-items-center">
+                    <h4 class="inbox-message-title mb-0">RE: your dumb opinion on xb1</h4>
+                    <button type="button" class="btn btn-secondary open-message-btn d-md-none" data-bs-toggle="modal"
+                      data-bs-target="#message-modal">
+                      +Open
+                    </button>
+                  </div>
+                  <small class="inbox-message-date">2/1/23</small>
+                  <p class="inbox-message-prev mt-1">
+                    Okay, completely IGNORING you just ASSUMING shulk would even like zanza
+                    like that, WHY ON EARTH...
+                  </p>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between align-items-center">
+                    <h4 class="inbox-message-title mb-0">my birthday girl</h4>
+                    <button type="button" class="btn btn-secondary open-message-btn d-md-none" data-bs-toggle="modal"
+                      data-bs-target="#message-modal">
+                      +Open
+                    </button>
+                  </div>
+                  <small class="inbox-message-date">1/30/23</small>
+                  <p class="inbox-message-prev mt-1">
+                    hey max and cheese, since your birthday and spring break are coming up, dad
+                    and i were thinking about...
+                  </p>
+                </a>
+              </ul>
+            </div>
+
+            <!-- Inbox Message Modal -->
+            <!-- View of a message in the inbox accessible only in mobile breakpoints -->
+            <div class="modal fade" id="message-modal" tabindex="-1" aria-labeledby="message-modal-label"
+              aria-hidden="true" data-bs-backdrop="static" data>
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Essentially the message "toolbar" header. Similar to the message panel view content -->
+                  <div class="modal-header d-flex justify-content-between">
+                    <div class="row d-flex justify-content-start">
+                      <!-- Trash Can Icon by Pauel Tepikin on The Noun Project -->
+                      <button type="button" class="btn btn-secondary trash-btn ms-1 ps-2">
+                        <img src="./assets/noun-trash-70641.png" alt="An icon of a trash can">
+                      </button>
+                      <!-- Reply Icon by Shaa on The Noun Project -->
+                      <button type="button" class="btn btn-secondary reply-btn ms-1 ps-2">
+                        <img src="./assets/noun-reply-1459593.png" alt="An icon of a reply button">
+                      </button>
+                      <!-- Kebab Icon by Gonzalo Bravo on The Noun Project -->
+                      <button type="button" class="btn btn-secondary kebab-btn ms-1 ps-2">
+                        <img src="./assets/noun-horizontal-menu-474212.png" alt="An icon of a kebab menu">
+                      </button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+                  <!-- The content of the message to be displayed in the message modal along with the beginning of the reply form -->
+                  <div class="modal-body">
+                    <div class="message-modal-content row">
+                      <h2 class="message-title">About Last Night</h2>
+                      <p class="modal-message-date">2/2/23</p>
+                      <p class="modal-message-address">from: victoriachase@yahoo.com<br>
+                        to: radmax95@hotmail.com</p>
+                      <hr>
+                      <p>
+                        Hi Maxine,<br><br>
+
+                        I know we said some things that kind of got out of hand. I got caught up in the heat of the
+                        moment and... Honestly I don't know what to say. I can't justify what I did, and I'm sure you
+                        didn't mean what you said either. I really just wish we could just meet up and hash things out.
+                        Call me when you get the chance.<br><br>
+
+                        Sincerely,<br>
+                        Vickie
+                      </p>
+                      <hr>
+                    </div>
+                    <form action="modal-reply" id="modal-reply" class="form-floating row" onsubmit="return false;">
+                      <textarea class="form-control" name="modal-message-reply" id="modal-message-reply"
+                        style="height: 100px;"></textarea>
+                      <label for="modal-message-reply">Reply</label>
+                    </form>
+                  </div>
+
+                  <div class="modal-footer">
+                    <div class="row flex w-100 justify-content-between">
+                      <button class="btn btn-primary attach-btn" type="button">Attach</button>
+                      <button class="btn btn-primary send-btn" type="button">Send</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Panel Column -->
+          <!-- The view of messages accessible through the lg and md breakpoints -->
+          <div class="message-panel d-none d-md-flex col-md-8 flex-column flex-grow-1">
+
+            <!-- The message panel header, containing the reply, trash, and context (kebab) buttons -->
+            <div class="message-panel-header row justify-content-end mt-1 me-1">
+              <!-- Trash Can Icon by Pauel Tepikin on The Noun Project -->
+              <button type="button" class="btn btn-secondary trash-btn ms-1 ps-2">
+                <img src="./assets/noun-trash-70641.png" alt="An icon of a trash can">
+              </button>
+              <!-- Reply Icon by Shaa on The Noun Project -->
+              <button type="button" class="btn btn-secondary reply-btn ms-1 ps-2">
+                <img src="./assets/noun-reply-1459593.png" alt="An icon of a reply button">
+              </button>
+              <!-- Kebab Icon by Gonzalo Bravo on The Noun Project -->
+              <button type="button" class="btn btn-secondary kebab-btn ms-1 ps-2">
+                <img src="./assets/noun-horizontal-menu-474212.png" alt="An icon of a kebab menu">
+              </button>
+            </div>
+
+            <!-- The message panel content to be displayed -->
+            <!-- A sample message showing how the metadata and content of an email in the mail app would be displayed -->
+            <div class="message-panel-content row">
+              <div class="message-content">
+                <hr>
+                <h2 class="message-title">About Last Night</h2>
+                <p class="message-date">2/2/2023</p>
+                <p>from: victoriachase@yahoo.com<br>
+                  to: radmax95@hotmail.com</p>
+                <hr>
+                <p>
+                  Hi Maxine,<br><br>
+
+                  I know we said some things that kind of got out of hand. I got caught up in the heat of the moment
+                  and...
+                  Honestly I don't know what to say. I can't justify what I did, and I'm sure you didn't mean what you
+                  said
+                  either.
+                  I really just wish we could just meet up and hash things out. Call me when you get the chance.<br><br>
+
+                  Sincerely,<br>
+                  Vickie
+                </p>
+                <hr>
+              </div>
+            </div>
+
+            <!-- The reply form of the message panel, with a text area, attach, and reply button -->
+            <form action="msg-panel-reply" class="message-panel-reply row ps-2 pe-2" onsubmit="return false;">
+              <div class="col">
+                <!-- Text Area for reply form -->
+                <div class="form-floating row mt-1">
+                  <textarea class="form-control" name="reply-msg-panel" id="message-panel-reply"
+                    style="height: 150px;"></textarea>
+                  <label for="message-panel-reply">Reply</label>
+                </div>
+
+                <!-- The attach and reply buttons of the reply form -->
+                <div class="row justify-content-between mt-1 me-0 mb-1">
+                  <button class="btn btn-primary attach-btn" type="button">Attach</button>
+                  <button class="btn btn-primary send-btn" type="button">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+/* Bootstrap Grid Project by Traven Gonzales */
+/* styles.css */
+
+/* Miscellaneous HTML/Bootstrap Stylings */
+/* Colour Declarations For Styling */
+:root {
+    /* Primary Body Colours */
+    --body1: #cee5f2;
+
+    /* Navbar Colours */
+    --nav-border-colour: #f3f3f3;
+    --nav-pill-hover-colour: #919191;
+    --nav-hr-colour: #337ca0;
+
+    /* Inbox Colours */
+    --inbox-bar-colour: #011638;
+    --inbox-proper-colour: #16161d;
+    --inbox-item-colour: #333341;
+    --inbox-text-colour: #f3f3f3;
+    --inbox-border-colour: #f3f3f3;
+
+    /* Message Modal Colours */
+    --modal-text-colour: #000;
+
+    /* Message Panel Colours */
+    --message-panel-colour: #337ca0;
+    --message-panel-hr-colour: #011638;
+
+    /* Button Colours */
+    /* Primary Button Colours */
+    --btn-colour: #ea9010;
+    --btn-hover-colour: #fdae3e;
+
+    /* Message Tool Button Colours */
+    --tool-btn-colour: #fffffb;
+    --tool-btn-hover-colour: #e0e0dd;
+
+    /* Open Message Button Colours */
+    --open-msg-btn-colour: #a6c6fa;
+    --open-msg-btn-hover-colour: #3f6db8;
+    --open-msg-btn-text-colour: #16161d;
+}
+
+/* Body Styling + Colour Variable Declarations */
+body {
+    background-color: var(--body1, #aaccff);
+    /* M Plus 1p font from Google Fonts */
+    font-family: "M PLUS 1p", Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Primary Btn Stylings (Used for compose, attach, and send buttons) */
+.btn-primary {
+    border: 0;
+    background-color: var(--btn-colour, #ff941a);
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-colour, #ffca85);
+}
+
+.btn-primary:active {
+    background-color: var(--btn-hover-colour, #ffca85) !important;
+}
+
+/* HTML Styling */
+html {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Nav Bar Styles */
+/* Nav Bar Styles (The Nav Bar that appears on lg+ breakpoints) */
+#nav-bar {
+    background-color: var(--body1, #aaccff) !important;
+}
+
+/* Styling for logo */
+.navbar-brand {
+    width: 15rem;
+}
+
+.navbar-brand>.logo {
+    width: 15rem;
+}
+
+.offcanvas-title>.logo {
+    width: 15rem;
+}
+
+/* Styling for toggler */
+.navbar-toggler {
+    width: 10%;
+    min-width: 2.5rem;
+    min-height: 2rem;
+}
+
+/* Styling for nav pills (links in the navbar) */
+.nav-pill {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.nav-pill:hover {
+    color: var(--nav-pill-hover-colour, white);
+}
+
+/* Styling for compose button */
+.compose-btn {
+    border: 0;
+    width: 10rem;
+    border-radius: 10em;
+    font-weight: 700;
+}
+
+/* Styling for spacer */
+.spacer {
+    width: 1px;
+    height: 1px;
+}
+
+/* Styling for navbar horizontal rule */
+.navbar hr {
+    border: 0.2em outset var(--nav-hr-colour, #808080);
+    border-radius: 10em;
+    width: 100%;
+}
+
+/* Offcanvas body styling */
+.offcanvas-lg .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+
+/* Inbox Bar Styles */
+/* Style for main body of inbox bar */
+.inbox-bar {
+    background-color: var(--inbox-bar-colour, #a8a8ff);
+    color: var(--inbox-text-colour, white);
+    min-width: 200px;
+}
+
+/* Style for Inbox Header Title */
+.inbox-bar .fs-2 {
+    font-weight: 700;
+}
+
+/* Style for inbox proper, the container for the message previews */
+.inbox {
+    background-color: var(--inbox-proper-colour, #bebebe);
+}
+
+/* Styles for open message button */
+.btn-secondary.open-message-btn {
+    background-color: var(--open-msg-btn-colour, #98deff);
+    color: var(--open-msg-btn-text-colour, black);
+    border: 0;
+}
+
+.btn-secondary.open-message-btn:hover {
+    background-color: var(--open-msg-btn-hover-colour, #c4ecff);
+}
+
+.btn-secondary.open-message-btn:active {
+    background-color: var(--open-msg-btn-hover-colour, #c4ecff) !important;
+    color: var(--open-msg-btn-text-colour, black) !important;
+}
+
+/* Styles for inbox message preview content */
+/* The main element housing all of the message preview content */
+.list-group-item {
+    background-color: var(--inbox-item-colour, #dddbdb);
+    color: var(--inbox-text-colour, #fff)
+}
+
+/* The preview text of the message content */
+.inbox-message-prev {
+    font-size: 0.8rem;
+}
+
+/* Style for search bar */
+.search-bar {
+    border-radius: 10em;
+}
+
+
+/* Message Modal Styles */
+/* Style for main body of modal */
+.modal-body,
+.modal-header,
+.modal-footer {
+    background-color: var(--message-panel-colour, #aaccff);
+    color: var(--modal-text-colour, #000000);
+}
+
+.modal-message-date {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.modal-message-address {
+    font-size: 0.9rem;
+}
+
+.modal-dialog hr {
+    border: .2rem outset var(--message-panel-hr-colour, #011638);
+    border-radius: 10rem;
+}
+
+
+/* Message Panel Styles */
+/* Styles for the base panel */
+.message-panel {
+    /* Used for bootstrap grid spacing debugging */
+    /* background-color: rgb(255, 255, 166); */
+    background-color: var(--message-panel-colour, #106283);
+}
+
+/* Styles for the message panel header/toolbar */
+.reply-btn,
+.kebab-btn,
+.trash-btn {
+    background-color: var(--tool-btn-colour, #808080);
+    border: 0;
+    width: 3rem;
+}
+
+.reply-btn:hover,
+.kebab-btn:hover,
+.trash-btn:hover {
+    background-color: var(--tool-btn-hover-colour, #b1b1b1);
+}
+
+.reply-btn:active,
+.kebab-btn:active,
+.trash-btn:active {
+    background-color: var(--tool-btn-hover-colour, #b1b1b1) !important;
+}
+
+.trash-btn>img,
+.reply-btn>img,
+.kebab-btn>img {
+    width: 2rem;
+}
+
+/* Styles for message panel content */
+.message-panel hr {
+    border: .3rem outset var(--message-panel-hr-colour, #000) !important;
+    border-radius: 10em;
+}
+
+.message-title {
+    font-weight: 700;
+}
+
+.message-date {
+    margin-bottom: 0;
+}
+
+/* Styles for message panel reply form */
+.attach-btn,
+.send-btn {
+    width: 7rem;
+    border-radius: 10em;
+}
+
+#message-panel-reply {
+    height: 150px;
+}
+
+/* Media Query Stylings */
+/* All breakpoints bigger than 300px */
+@media (min-width: 300px) {
+
+    /* Media query to disable the horizontal scrollbar on screens smaller than 300px */
+    body,
+    html {
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+}
+
+/* Breakpoints smaller than bootstrap's lg breakpoint */
+@media (max-width: 991px) {
+
+    /* Give the navbar a bottom border whenever it becomes the header on breakpoints smaller than lg */
+    .navbar {
+        border-bottom: .8rem ridge var(--nav-border-colour, white);
+    }
+}
+
+/* Larger than bootstrap's md breakpoint  */
+@media (min-width: 769px) {
+
+    /* Give the inbox bar a right border whenever the message panel is in view */
+    .inbox-bar {
+        border-right: .7rem ridge var(--inbox-border-colour, white);
+    }
+
+}
+
+/* Larger than bootstrap's lg breakpoint */
+@media (min-width: 992px) {
+
+    /* Give the navbar a right border whenver it is expanded */
+    .navbar {
+        border-right: .7rem ridge var(--nav-border-colour, white);
+    }
+}
