@@ -11,7 +11,7 @@ at Bootstrap's screen size breakpoints as the screen gets smaller.
 
 Here all columns of the Mail UI (the Navbar, Inbox Bar, and Message Panel) are expanded and in full display.
 
-### Tablet/MD-Breapoint
+### Tablet/MD-Breakpoint
 
 Starting at this breakpoint the Navbar and its offcanvas comopnent collapse, reducing its size such that it
 displays as a header featuring the Mail UI's logo as well as an offcanvas toggle button. The full navbar
