@@ -31,6 +31,6 @@ As of now, all messages in the inbox view open the same message.
 A few assets used in the project were from The Noun Project, an aggregate site that provides free to use
 stock images and icons. These assets were: 
 
-*The Trash Menu Icon by Pauel Tepekin: https://thenounproject.com/icon/trash-70641/
-*The Kebab Menu Icon by Gonzalo Bravo: https://thenounproject.com/icon/horizontal-menu-474212/
-*The Reply Menu Icon by Shaa: https://thenounproject.com/icon/reply-1459593/
+* The Trash Menu Icon by Pauel Tepekin: https://thenounproject.com/icon/trash-70641/
+* The Kebab Menu Icon by Gonzalo Bravo: https://thenounproject.com/icon/horizontal-menu-474212/
+* The Reply Menu Icon by Shaa: https://thenounproject.com/icon/reply-1459593/
